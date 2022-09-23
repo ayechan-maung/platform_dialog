@@ -39,12 +39,13 @@ class AndroidDialog implements PlatformDialog {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       content: content,
-      titlePadding: EdgeInsets.all(8),
-      contentPadding: EdgeInsets.all(8),
+      titlePadding: const EdgeInsets.all(12),
+      contentPadding: const EdgeInsets.all(10),
       actions: actions ?? [],
       actionsAlignment: axisAlignment,
       icon: icon,
-      iconPadding: EdgeInsets.all(6),
+      iconPadding: const EdgeInsets.all(6),
+      actionsPadding: EdgeInsets.zero,
     );
   }
 }
@@ -88,6 +89,6 @@ class AndroidButton implements PlatformDialogButton {
 class CupertinoButton implements PlatformDialogButton {
   @override
   Widget build(BuildContext context, {required Widget child, required VoidCallback onPressed}) {
-    return CupertinoDialogAction(child: child, onPressed: onPressed);
+    return CupertinoDialogAction(onPressed: onPressed, child: child);
   }
 }
